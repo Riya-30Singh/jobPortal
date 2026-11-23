@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobSphere | Find Your Next Opportunity</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">J</span>
+      Job<span>Sphere</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#about">Why JobSphere</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+    <a href="#jobs" class="nav-btn">Explore Jobs ↗</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="pulse"></span>
+        YOUR NEXT CHAPTER STARTS HERE
+      </div>
+
+      <h1>
+        Discover Work.<br>
+        <span>Define Your Future.</span>
+      </h1>
+
+      <p>
+        Great opportunities don't just happen. Find the right role,
+        connect with inspiring companies, and take the next step in your career.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#jobs" class="primary-btn">Find Your Dream Job ↗</a>
+        <a href="#about" class="secondary-btn">Explore Platform</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="avatar-stack">
+          <span>R</span><span>A</span><span>S</span><span>M</span>
+        </div>
+        <div>
+          <strong>Start your journey today</strong>
+          <small>Explore opportunities across industries</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-orbit orbit-one"></div>
+      <div class="visual-orbit orbit-two"></div>
+
+      <div class="floating-card top-card">
+        <span class="floating-icon">✦</span>
+        <div>
+          <strong>New opportunities</strong>
+          <small>Updated job listings</small>
+        </div>
+      </div>
+
+      <div class="hero-main-card">
+        <div class="card-top">
+          <span class="mini-label">CAREER MATCH</span>
+          <span class="match-badge">✦ Explore</span>
+        </div>
+
+        <div class="target-icon">◎</div>
+        <h3>Your next big move<br>is closer than you think.</h3>
+        <p>Search smarter. Grow faster.</p>
+
+        <div class="mini-progress">
+          <span></span>
+        </div>
+        <div class="progress-label">
+          <span>Career journey</span>
+          <strong>Start now</strong>
+        </div>
+      </div>
+
+      <div class="floating-card bottom-card">
+        <div class="success-icon">✓</div>
+        <div>
+          <strong>Opportunity awaits</strong>
+          <small>Your future starts today</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="stats-section">
+    <div class="stat-item">
+      <h2>Explore</h2>
+      <p>Multiple job categories</p>
+    </div>
+    <div class="stat-item">
+      <h2>Discover</h2>
+      <p>New career opportunities</p>
+    </div>
+    <div class="stat-item">
+      <h2>Connect</h2>
+      <p>With growing companies</p>
+    </div>
+    <div class="stat-item">
+      <h2>Grow</h2>
+      <p>Build your future</p>
+    </div>
+  </section>
+
+  <!-- JOB LISTINGS -->
+  <main class="jobs-section" id="jobs">
+    <div class="section-heading">
+      <div>
+        <span class="section-tag">OPPORTUNITY BOARD</span>
+        <h2>Find a role that <span>fits you.</span></h2>
+        <p>Explore handpicked demo opportunities and discover your next career move.</p>
+      </div>
+      <button class="saved-toggle" id="savedToggle">♡ Saved Jobs <span id="savedCount">0</span></button>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-panel">
+      <div class="search-field">
+        <span>⌕</span>
+        <input type="text" id="searchInput"
+          placeholder="Job title, company or skill...">
+      </div>
+
+      <div class="filter-field">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="Development">Development</option>
+          <option value="Design">Design</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Data">Data & Analytics</option>
+          <option value="Business">Business</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="typeFilter">Work Type</label>
+        <select id="typeFilter">
+          <option value="all">All Types</option>
+          <option value="Remote">Remote</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="On-site">On-site</option>
+        </select>
+      </div>
+
+      <button class="search-btn" id="searchBtn">Search Jobs ↗</button>
+    </div>
+
+    <div class="job-toolbar">
+      <p id="resultCount">Showing opportunities</p>
+      <button class="reset-btn" id="resetBtn">↺ Reset filters</button>
+    </div>
+
+    <div class="job-grid" id="jobGrid"></div>
+
+    <div class="empty-state" id="emptyState" hidden>
+      <div>⌕</div>
+      <h3>No matching jobs found</h3>
+      <p>Try changing your search or filters to explore more opportunities.</p>
+      <button class="primary-btn" id="emptyReset">Clear filters</button>
+    </div>
+  </main>
+
+  <!-- WHY JOBSPHERE -->
+  <section class="about-section" id="about">
+    <div class="about-heading">
+      <span class="section-tag">WHY JOBSPHERE?</span>
+      <h2>Your career deserves<br><span>a better beginning.</span></h2>
+      <p>Make your job search simpler, smarter, and more organized.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon purple">⌕</div>
+        <h3>Smart Discovery</h3>
+        <p>Explore opportunities with easy search and category filters.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon mint">♡</div>
+        <h3>Save Your Favourites</h3>
+        <p>Keep interesting opportunities in one convenient place.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon orange">↗</div>
+        <h3>Career Exploration</h3>
+        <p>Discover different roles and learn about their requirements.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <a href="#" class="logo footer-logo">
+      <span class="logo-icon">J</span>
+      Job<span>Sphere</span>
+    </a>
+    <p>Explore opportunities. Create possibilities.</p>
+    <small>© 2026 JobSphere. Demo job portal project.</small>
+  </footer>
+
+  <!-- JOB DETAILS MODAL -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeDetails">×</button>
+      <div id="jobDetailsContent"></div>
+    </div>
+  </div>
+
+  <!-- APPLICATION MODAL -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal-box apply-box">
+      <button class="modal-close" id="closeApply">×</button>
+      <span class="section-tag">TAKE THE NEXT STEP</span>
+      <h2>Apply for this role</h2>
+      <p class="modal-subtitle" id="applyJobName"></p>
+
+      <form id="applicationForm">
+        <input type="hidden" id="applyJobId">
+
+        <label for="applicantName">Full Name</label>
+        <input type="text" id="applicantName" placeholder="Enter your name" required>
+
+        <label for="applicantEmail">Email Address</label>
+        <input type="email" id="applicantEmail" placeholder="Enter your email" required>
+
+        <label for="applicantEducation">Education</label>
+        <input type="text" id="applicantEducation" placeholder="e.g. MCA, B.Tech, BCA" required>
+
+        <label for="applicantSkills">Key Skills</label>
+        <textarea id="applicantSkills" placeholder="e.g. HTML, CSS, JavaScript" required></textarea>
+
+        <button type="submit" class="primary-btn submit-btn">Submit Application ↗</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
